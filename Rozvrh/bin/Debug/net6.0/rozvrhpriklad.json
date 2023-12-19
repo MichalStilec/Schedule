@@ -1,0 +1,67 @@
+{
+    "Monday": [
+      { "Hour": 1,  "Name": "WA", "Teacher": "Mgr. Jan Pavlát & Mgr. Nykyta Narusevych", "Class": "17a", "Floor": 3},
+      { "Hour": 2,  "Name": "WA", "Teacher": "Mgr. Jan Pavlát & Mgr. Nykyta Narusevych", "Class": "17a", "Floor": 3},
+      { "Hour": 3,  "Name": "C", "Teacher": "MUDr. Kristina Studénková", "Class": "24", "Floor": 4},
+      { "Hour": 4,  "Name": "A", "Teacher": "Ing. Bc. Šárka Páltíková", "Class": "24", "Floor": 4},
+      { "Hour": 5,  "Name": "M", "Teacher": "Mgr. Eva Neugebauerová", "Class": "24", "Floor": 4},
+      { "Hour": 6,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 7,  "Name": "PV", "Teacher": "Mgr. Alena Reichlová & Ing. Ondřej Mandík", "Class": "18b", "Floor": 3},
+      { "Hour": 8,  "Name": "PV", "Teacher": "Mgr. Alena Reichlová & Ing. Ondřej Mandík", "Class": "18b", "Floor": 3},
+      { "Hour": 9,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 10, "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"}
+    ],
+
+    "Tuesday": [
+      { "Hour": 1,  "Name": "M", "Teacher": "Mgr. Eva Neugebauerová", "Class": "24", "Floor": 4},
+      { "Hour": 2,  "Name": "TP", "Teacher": "Ing. Vít Nohejl", "Class": "24", "Floor": 4},
+      { "Hour": 3,  "Name": "PSS", "Teacher": "Jan Molič", "Class": "18a", "Floor": 2},
+      { "Hour": 4,  "Name": "PSS", "Teacher": "Jan Molič", "Class": "18a", "Floor": 2},
+      { "Hour": 5,  "Name": "A", "Teacher": "Ing. Bc. Šárka Páltíková", "Class": "5b", "Floor": 1},
+      { "Hour": 6,  "Name": "AM", "Teacher": "Ing. Filip Kallmünzer", "Class": "24", "Floor": 4},
+      { "Hour": 7,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 8,  "Name": "TV", "Teacher": "Mgr. Pavel Lopocha", "Class": "TV", "Floor": 0},
+      { "Hour": 9,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 10, "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"}
+    ],
+
+    "Wednesday": [
+      { "Hour": 1,  "Name": "PIS", "Teacher": "Ing. Lucie Brčáková", "Class": "24", "Floor": 4},
+      { "Hour": 2,  "Name": "C", "Teacher": "MUDr. Kristina Studénková", "Class": "24", "Floor": 4},
+      { "Hour": 3,  "Name": "CIT", "Teacher": "Ing. Mgr. Vladimír Váňa, CSc.", "Class": "19b", "Floor": 3},
+      { "Hour": 4,  "Name": "CIT", "Teacher": "Ing. Mgr. Vladimír Váňa, CSc.", "Class": "19b", "Floor": 3},
+      { "Hour": 5,  "Name": "AM", "Teacher": "Ing. Filip Kallmünzer", "Class": "24", "Floor": 4},
+      { "Hour": 6,  "Name": "M", "Teacher": "Mgr. Eva Neugebauerová", "Class": "24", "Floor": 4},
+      { "Hour": 7,  "Name": "DS", "Teacher": "Ing. Ivana Kantnerová", "Class": "24", "Floor": 4},
+      { "Hour": 8,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 9,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 10, "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"}
+    ],
+
+    "Thursday": [
+      { "Hour": 1,  "Name": "WA", "Teacher": "Mgr. Jan Pavlát", "Class": "24", "Floor": 4},
+      { "Hour": 2,  "Name": "M", "Teacher": "Mgr. Eva Neugebauerová", "Class": "24", "Floor": 4},
+      { "Hour": 3,  "Name": "PIS", "Teacher": "Ing. Lucie Brčáková", "Class": "24", "Floor": 4},
+      { "Hour": 4,  "Name": "PV", "Teacher": "Mgr. Alena Reichlová", "Class": "24", "Floor": 4},
+      { "Hour": 5,  "Name": "A", "Teacher": "Ing. Bc. Šárka Páltíková", "Class": "24", "Floor": 4},
+      { "Hour": 6,  "Name": "C", "Teacher": "MUDr. Kristina Studénková", "Class": "24", "Floor": 4},
+      { "Hour": 7,  "Name": "PSS", "Teacher": "Ing. Lukáš Masopust", "Class": "24", "Floor": 4},
+      { "Hour": 8,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 9,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 10, "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"}
+    ],
+    
+    "Friday": [
+      { "Hour": 1,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 2,  "Name": "PIS", "Teacher": "Ing. Lucie Brčáková & Ing. Vít Nohejl", "Class": "19a", "Floor": 3},
+      { "Hour": 3,  "Name": "PIS", "Teacher": "Ing. Lucie Brčáková & Ing. Vít Nohejl", "Class": "19a", "Floor": 3},
+      { "Hour": 4,  "Name": "A", "Teacher": "Ing. Bc. Šárka Páltíková", "Class": "29", "Floor": 4},
+      { "Hour": 5,  "Name": "TV", "Teacher": "Mgr. Pavel Lopocha", "Class": "TV", "Floor": 0},
+      { "Hour": 6,  "Name": "DS", "Teacher": "Ing. Ivana Kantnerová", "Class": "17a", "Floor": 3},
+      { "Hour": 7,  "Name": "DS", "Teacher": "Ing. Ivana Kantnerová", "Class": "17a", "Floor": 3},
+      { "Hour": 8,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 9,  "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"},
+      { "Hour": 10, "Name": "-", "Teacher": "-", "Class": "-", "Floor": "-"}
+    ]
+  }
+  

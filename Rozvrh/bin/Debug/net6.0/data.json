@@ -1,0 +1,19 @@
+[
+  { "SubjectName": "PV ", "Teacher": "Mgr. Alena Reichlova & Ing. Ondrej Mandik", "Hours": 2, "Class": ["18b"], "TypeOfLecture": "Excercise", "Floor": ["3"]},
+  { "SubjectName": "PV ", "Teacher": "Mgr. Alena Reichlova", "Hours": 1, "Class": ["24"], "TypeOfLecture": "Theory", "Floor": ["4"]},
+  { "SubjectName": "PSS", "Teacher": "Jan Molic", "Hours": 2, "Class": ["8a"], "TypeOfLecture": "Excercise", "Floor": ["2"]},
+  { "SubjectName": "PSS", "Teacher": "Ing. Lukas Masopust", "Hours": 1, "Class": ["24"], "TypeOfLecture": "Theory", "Floor": ["4"]},
+  { "SubjectName": "C  ", "Teacher": "MUDr. Kristina Studenkova", "Hours": 3, "Class": ["24"], "TypeOfLecture": "Theory", "Floor": ["4"]},
+  { "SubjectName": "AM ", "Teacher": "Ing. Filip Kallmunzer", "Hours": 2, "Class": ["24"], "TypeOfLecture": "Theory", "Floor": ["4"]},
+  { "SubjectName": "A  ", "Teacher": "Ing. Bc. Sarka Paltikova", "Hours": 4, "Class": ["24","29","5b"], "TypeOfLecture":"Theory", "Floor": ["4","4","1"]},
+  { "SubjectName": "TV ", "Teacher": "Mgr. Pavel Lopocha", "Hours": 2, "Class": ["TV"], "TypeOfLecture":"Physical Excercise", "Floor": ["0"]},
+  { "SubjectName": "WA ", "Teacher": "Mgr. Jan Pavlat & Mgr. Nykyta Narusevych", "Hours": 2, "Class": ["17b"], "TypeOfLecture":"Excercise", "Floor": ["3"]},  
+  { "SubjectName": "WA ", "Teacher": "Mgr. Jan Pavlat", "Hours": 1, "Class": ["24"], "TypeOfLecture":"Theory", "Floor": ["4"]},  
+  { "SubjectName": "M  ", "Teacher": "Mgr. Eva Neugebauerova", "Hours": 4, "Class": ["24"], "TypeOfLecture":"Theory", "Floor": ["4"]},
+  { "SubjectName": "DS ", "Teacher": "Ing. Ivana Kantnerova", "Hours": 2, "Class": ["17b"], "TypeOfLecture":"Excercise", "Floor": ["3"]},
+  { "SubjectName": "DS ", "Teacher": "Ing. Ivana Kantnerova", "Hours": 1, "Class": ["24"], "TypeOfLecture":"Theory", "Floor": ["4"]},
+  { "SubjectName": "PIS", "Teacher": "Ing. Lucie Brcakova & Ing. Vit Nohejl", "Hours": 2, "Class": ["19b"], "TypeOfLecture": "Excercise", "Floor": ["3","4"]},
+  { "SubjectName": "PIS", "Teacher": "Ing. Lucie Brcakova", "Hours": 2, "Class": ["24"], "TypeOfLecture": "Theory", "Floor": ["3","4"]},
+  { "SubjectName": "TP ", "Teacher": "Ing. Vit Nohejl", "Hours": 1, "Class": ["24"], "TypeOfLecture": "Theory", "Floor": ["4"]},
+  { "SubjectName": "CIT", "Teacher": "Ing. Mgr. Vladimir Vana", "Hours": 2, "Class": ["19c"], "TypeOfLecture": "Excercise", "Floor": ["3"]}
+]
