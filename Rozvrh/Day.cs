@@ -9,6 +9,7 @@ namespace ConsoleApp1
     internal class Day
     {
         private List<Subject> subjects;
+        private List<Lesson> lessons;
         private int totalHours;
         private int emptyhours;
         private string previousSubject = "";
@@ -21,6 +22,12 @@ namespace ConsoleApp1
             this.subjects = subjects;
             this.totalHours = totalHours;
             this.emptyhours = emptyhours;
+            this.dailySchedule = new List<Lesson>();
+        }
+
+        public Day(List<Lesson> lessons)
+        {
+            this.lessons = lessons;
             this.dailySchedule = new List<Lesson>();
         }
 
@@ -37,6 +44,7 @@ namespace ConsoleApp1
             {
                 totalHours = hours;
             }
+
             int tries = 0;
             while (currentHours < totalHours)
             {
@@ -45,25 +53,19 @@ namespace ConsoleApp1
                 var course = subjects[courseIndex]; 
 
 
-                if (course.SubjectName == previousSubject && course.TypeOfLecture == previousType && previousType != "-" && tries <= 5)
+                int classIndex = random.Next(course.Class.Count);
+                string selectedClass = course.Class[classIndex];
+
+                if (course.TypeOfLecture == "Excercise" && currentHours + 1 == totalHours && tries < 3)
                 {
                     tries++;
                     continue;
                 }
-                else
+                else if (course.TypeOfLecture == "Excercise" && currentHours + 1 == totalHours && tries == 3)
                 {
-                    previousSubject = course.SubjectName;
-                    previousType = course.TypeOfLecture;
+                    break;
                 }
 
-                if (currentHours == totalHours - 1 && course.TypeOfLecture == "Excercise")
-                {
-                    continue;
-                }
-
-
-                int classIndex = random.Next(course.Class.Count);
-                string selectedClass = course.Class[classIndex];
 
                 if (course.TypeOfLecture == "Excercise")
                 {
@@ -102,4 +104,6 @@ namespace ConsoleApp1
             return dailySchedule;
         }
     }
+
+    
 }
