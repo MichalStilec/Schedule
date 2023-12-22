@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// This class is used for the json deserialization.
+    /// </summary>
     internal class Subject
     {
 

@@ -8,13 +8,10 @@ namespace ConsoleApp1
 {
     internal class Reviewer
     {
-        public int TotalPoints { get; private set; }
-        public Reviewer()
-        {
-
-        }
-
-        
+        /// <summary>
+        /// This method makes sure to review all days
+        /// </summary>
+        /// <returns>Points for the schedule</returns>
         public int ReviewWeek(List<Day> week)
         {
             int points = 0;
@@ -25,6 +22,10 @@ namespace ConsoleApp1
             return points;
         }
 
+        /// <summary>
+        /// This method reviews day one by one with ratings
+        /// </summary>
+        /// <returns>Points for the schedule</returns>
         public int ReviewDay(Day d)
         {
             int points = 0;
@@ -40,19 +41,11 @@ namespace ConsoleApp1
             points += Rating10(d);
             return points;
         }
-
+        
         /// <summary>
         /// If the school starts one hour later, then based on my preference it is better and in result schedule gets plus points.
         /// On the other side, if the school is long, schedule gets minus points.
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
-        /// <summary>
-        /// If the school starts one hour later, then based on my preference it is better and in result schedule gets plus points.
-        /// On the other side, if the school is long, schedule gets minus points.
-        /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating1(Day d)
         {
             int points = 0;
@@ -61,7 +54,7 @@ namespace ConsoleApp1
             {
                 if (i == 0 && d.dailySchedule[i] == null)
                 {
-                    points += 300;
+                    points += 500;
                 }
                 if (i >= 8 && i < d.dailySchedule.Count && d.dailySchedule[i] != null)
                 {
@@ -76,8 +69,6 @@ namespace ConsoleApp1
         /// If it is the same course multiple times in one day and it is not a multi-hour class, it is wrong.
         /// Practice and theory can be in one day.
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating2(Day d)
         {
             List<string> subjectNames = new List<string>();
@@ -105,8 +96,6 @@ namespace ConsoleApp1
         /// If I have to move to a different floor between classes it's bad, if to a different classroom it's also
         /// bad but if it's on the same floor it's not so bad.
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating3(Day d)
         {
             int points = 0;
@@ -141,8 +130,6 @@ namespace ConsoleApp1
         /// <summary>
         /// Lunch is served between 5 and 8, so each day one of the hours 5, 6, 7 or 8 must be free for lunch.
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating4(Day d)
         {
             int points = 0;
@@ -162,8 +149,6 @@ namespace ConsoleApp1
         /// <summary>
         /// You should ideally study 5-6 hours a day, more than that is wrong, 8 is the ceiling, 9 is a problem and 10 is probably not even legal.
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating5(Day d)
         {
             int points = 0;
@@ -198,8 +183,6 @@ namespace ConsoleApp1
         /// <summary>
         /// When the exercise is two hours, the hours have to be together on the same day.
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating6(Day d)
         {
             int points = 0;
@@ -228,8 +211,6 @@ namespace ConsoleApp1
         /// <summary>
         /// Maths and profile subjects should not be taught in the first hour or after the lunch break, points must be deducted for this.
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating7(Day d)
         {
             int points = 0;
@@ -253,8 +234,6 @@ namespace ConsoleApp1
         /// This rating checks if there are three excercise hours in one day which would be demanding for the students 
         /// so that will do minus points for the schedule
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating8(Day d)
         {
             int points = 0;
@@ -279,8 +258,6 @@ namespace ConsoleApp1
         /// This rating check if the day schedule doesnt have the hours like this:  hour - emptyhour - hour - emptyhour - hour.
         /// This means that students would have two waiting hours during the day, which would lose precious student time
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating9(Day d)
         {
             int points = 0;
@@ -290,7 +267,7 @@ namespace ConsoleApp1
                 if (d.dailySchedule[i] != null && d.dailySchedule[i+1] == null && d.dailySchedule[i+2] != null && d.dailySchedule[i+3] == null && d.dailySchedule[i+4] != null)
                 {
                     
-                    points -= 100000;
+                    points -= 10000;
                 }
             }
 
@@ -301,40 +278,37 @@ namespace ConsoleApp1
         /// <summary>
         /// Wellbeing rating, which rates the day with minus points if the current day contains A, PIS, and TP subjects. On the other side if the day contains AM and TV subjects then it gives plus points.
         /// </summary>
-        /// <param name="d"></param>
-        /// <returns></returns>
         int Rating10(Day d)
         {
             int points = 0;
 
-            List<string> negativeSubjects = new List<string> { "A  ", "PIS", "TP " };
-            List<string> positiveSubjects = new List<string> { "AM ", "TV " };
+            List<string> negative = new List<string> { "Ing. Bc. Sarka Paltikova", "Ing. Vit Nohejl" };
+            List<string> positive = new List<string> { "MUDr. Kristina Studenkova", "Mgr. Pavel Lopocha", "Mgr. Alena Reichlova & Ing. Ondrej Mandik" };
 
 
             foreach (Lesson l in d.dailySchedule)
             {
-                for (int i = 0; i < negativeSubjects.Count; i++)
+                for (int i = 0; i < negative.Count; i++)
                 {
-                    if (l != null && l.SubjectName == negativeSubjects[i])
+                    if (l != null && l.Teacher == negative[i])
                     {
-                        negativeSubjects.Remove(negativeSubjects[i]);
+                        negative.Remove(negative[i]);
                     }
                 }
-                for (int i = 0; i < positiveSubjects.Count; i++)
+                for (int i = 0; i < positive.Count; i++)
                 {
-                    if (l != null && l.SubjectName == positiveSubjects[i])
+                    if (l != null && l.Teacher == positive[i])
                     {
-
-                        positiveSubjects.Remove(positiveSubjects[i]);
+                        positive.Remove(positive[i]);
                     }
                 }
             }
 
-            if (negativeSubjects.Count == 0)
+            if (negative.Count == 0)
             {
-                points -= 2000;
+                points -= 500;
             }
-            if (positiveSubjects.Count == 0)
+            if (positive.Count == 0)
             {
                 points += 500;
             }

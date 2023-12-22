@@ -7,8 +7,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
+    /// <summary>
+    /// This class is used to create lessons in generator and json deserialization.
+    /// </summary>
     public class Lesson
     {
+        /// <summary>
+        /// This constructor is used in the generator
+        /// </summary>
         public Lesson(string subjectName, string teacher, string classs, string typeOfLecture, string floor)
         {
             SubjectName = subjectName;
@@ -16,6 +22,13 @@ namespace ConsoleApp1
             Class = classs;
             TypeOfLecture = typeOfLecture;
             Floor = floor;
+        }
+
+        /// <summary>
+        /// This constructor is used by the OurSchoolSchedule class
+        /// </summary>
+        public Lesson()
+        {
         }
 
         public string SubjectName { get; set; }
