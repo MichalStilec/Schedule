@@ -1,3 +1,9 @@
+# Základní informace
+* Program má za úkol generovat různé variace rozvrhů a následně je hodnotit.
+* Program používá dynamický počet vláken dle jader Vašeho procesoru
+* Na začátku programu se vypíše graficky vytvořený rozvrh ze souboru včetně bodů
+* Na konci programu se grafick yvypíšou tři nejlepší rozvrhy
+
 # Postup ke spuštění:
 1. Stáhněte si zip soubor
 2. Soubor Extrahujte
@@ -5,8 +11,8 @@
 
 
 # Postup ke zhodnocení vlastního rozvrhu:
-1. Otevřete Rozvrh\bin\Debug\net6.0\JsonFiles\oldschedule.json
-2. Soubor musí mít celkově 50 hodin, včetně hodnot null(volné hodiny)
+1. Otevřete následovně : Rozvrh\bin\Debug\net6.0\JsonFiles\oldschedule.json
+2. Soubor je plný momentálním rozvrhem, pro úpravu smažte hodiny a ZACHOVÁVEJTE PŘEDEŠLOU STRUKTURU. Soubor musí mít celkově 50 hodin, včetně hodnot null(volné hodiny)
 možné vložit: null nebo hodina 
 příklad
 
@@ -14,40 +20,45 @@ null - Volná hodina
 
 { "SubjectName": "PV ", "Teacher": "Mgr. Alena Reichlova & Ing. Ondrej Mandik", "Hours": 2, "Class": ["18b"], "TypeOfLecture": "Excercise", "Floor": ["3"]}
 
-SubjectName - Název předmětu
-Teacher - Vyučující daného předmětu, pokud učí předmět dva učitelé, tak se píší oba. Učitelé se píší i s tituly dle stránek školy.
-Hours - Počet hodin daného předmětu v celým týdnu
-Class - List učeben, zde se může vložit více učeben například ["18b","19b"], generátor poté vybírá různé třídy 
-TypeOfLecture - Theory (M,A,C,...), Physical Excercise (TV), Excercise (PV,CIT,...)
-Floor - List podlaží, na kterém se učebna nachází například pokud máme učebny ["18b", "19b"] tak Floor bude ["3","3"], protože oboje učebny jsou na patře tři
+>* SubjectName - Název předmětu
+>* Teacher - Vyučující daného předmětu, pokud učí předmět dva učitelé, tak se píší oba. Učitelé se píší i s tituly dle stránek školy.
+>* Hours - Počet hodin daného předmětu v celým týdnu
+>* Class - List učeben, zde se může vložit více učeben například ["18b","19b"], generátor poté vybírá různé třídy 
+>* TypeOfLecture - Theory (M,A,C,...), Physical Excercise (TV), Excercise (PV,CIT,...)
+>* Floor - List podlaží, na kterém se učebna nachází například pokud máme učebny ["18b", "19b"] tak Floor bude ["3","3"], protože oboje učebny jsou na patře tři
 
+
+![Screenshot 2023-12-22 204327](https://github.com/MichalStilec/Schedule/assets/113086016/37975f3c-0cac-4661-9e45-d1c7cba68cf5)
+> Může vypadat následovně
 
 3. Spusťte aplikaci: "Rozvrh.exe"
 4. První vypsaný rozvrh v programu je Vámi daný rozvrh
+
+![Screenshot 2023-12-22 204551](https://github.com/MichalStilec/Schedule/assets/113086016/36a0fb82-3c85-4c11-839f-7deb26f1e412)
 
 
 # Konfigurace
 -  konfigurace probíhá po spuštění programu (nastavení času)
 
 
-DOKUMENTACE PROJEKTU
+# DOKUMENTACE PROJEKTU
 
-Třída: Program
+## Třída: Program
 Hlavní třída programu je zodpovědná za generování a hodnocení školních rozvrhů.
 
 Proměnné
-random: Instance třídy Random pro generování náhodných hodnot.
-reviewer: Instance třídy Reviewer pro hodnocení rozvrhů.
-json: Řetězec obsahující data načtená ze souboru "JsonFiles/data.json".
-schedules: Seznam obsahující listy dnů, představující vygenerované rozvrhy.
-bestSchedules: Seznam obsahující trojice, kde první prvek je nejlepší rozvrh a druhý prvek je jeho hodnocení.
-betterSchedules: Počet lepších rozvrhů než ten původní.
-oldSchedulePoints: Hodnocení původního rozvrhu.
-endallthreads: Logická hodnota určující ukončení všech vláken.
-time: Časový limit pro běh programu.
-schedulesCount: Celkový počet vygenerovaných rozvrhů.
-reviewedCount: Celkový počet vyhodnocených rozvrhů.
-lockObject: Objekt pro zajištění vzájemné vyloučenosti při přístupu ke sdíleným prostředkům.
+>* random: Instance třídy Random pro generování náhodných hodnot.
+>* reviewer: Instance třídy Reviewer pro hodnocení rozvrhů.
+>* json: Řetězec obsahující data načtená ze souboru "JsonFiles/data.json".
+>* schedules: Seznam obsahující listy dnů, představující vygenerované rozvrhy.
+>* bestSchedules: Seznam obsahující trojice, kde první prvek je nejlepší rozvrh a druhý prvek je jeho hodnocení.
+>* betterSchedules: Počet lepších rozvrhů než ten původní.
+>* oldSchedulePoints: Hodnocení původního rozvrhu.
+>* endallthreads: Logická hodnota určující ukončení všech vláken.
+>* time: Časový limit pro běh programu.
+>* schedulesCount: Celkový počet vygenerovaných rozvrhů.
+>* reviewedCount: Celkový počet vyhodnocených rozvrhů.
+>* lockObject: Objekt pro zajištění vzájemné vyloučenosti při přístupu ke sdíleným prostředkům.
 
 Metody
 Metoda: Main
@@ -75,18 +86,18 @@ Metoda: Watchdog
 Zajišťuje ukončení všech vláken po uplynutí časového limitu.
 
 
-Třída: Day
+## Třída: Day
 Tato třída představuje jeden den ve školním rozvrhu a obsahuje denní harmonogram lekcí.
 
 Proměnné
-subjects: Seznam předmětů pro daný den.
-totalHours: Celkový počet dostupných hodin pro denní rozvrh.
-emptyhours: Počet prázdných hodin ve rozvrhu.
-previousSubject: Název předchozího předmětu (interní účel).
-previousType: Typ předchozí lekce (interní účel).
-dailySchedule: Seznam lekcí reprezentujících denní rozvrh.
-Day(List<Subject> subjects, int totalHours, int emptyhours): Inicializuje novou instanci třídy s určenými předměty, celkovým počtem hodin a počtem prázdných hodin.
-Day(List<Lesson> dailySchedule): Inicializuje novou instanci třídy s předdefinovaným denním rozvrhem.
+>* subjects: Seznam předmětů pro daný den.
+>* totalHours: Celkový počet dostupných hodin pro denní rozvrh.
+>* emptyhours: Počet prázdných hodin ve rozvrhu.
+>* previousSubject: Název předchozího předmětu (interní účel).
+>* previousType: Typ předchozí lekce (interní účel).
+>* dailySchedule: Seznam lekcí reprezentujících denní rozvrh.
+>* Day(List<Subject> subjects, int totalHours, int emptyhours): Inicializuje novou instanci třídy s určenými předměty, celkovým počtem hodin a počtem prázdných hodin.
+>* Day(List<Lesson> dailySchedule): Inicializuje novou instanci třídy s předdefinovaným denním rozvrhem.
 
 Metoda: GenerateTimetable
 GenerateTimetable(): Celý generátor, který slouží k vytváření všech rozvrhů. Generuje náhodně rozložený rozvrh na základě dostupných předmětů.
@@ -95,14 +106,14 @@ Metoda: GetDailySchedule
 GetDailySchedule(): Vrací denní rozvrh lekcí.
 
 
-Třída: Reviewer
+## Třída: Reviewer
 Tato interní třída představuje hodnotitele školních rozvrhů.
 
 Metoda: ReviewWeek
-ReviewWeek(List<Day> week): Tato metoda zajišťuje hodnocení všech dnů v týdnu.
-Metoda: ReviewDay
-ReviewDay(Day d): Tato metoda hodnotí jeden den podle určených kritérií.
-Metody hodnocení (Rating1 - Rating10)
+>* ReviewWeek(List<Day> week): Tato metoda zajišťuje hodnocení všech dnů v týdnu.
+>* Metoda: ReviewDay
+>* ReviewDay(Day d): Tato metoda hodnotí jeden den podle určených kritérií.
+### Metody hodnocení (Rating1 - Rating10)
 Rating1: Hodnotí, zda začínáte školu později. Získává body za začátek po 8. hodině a penalizuje za délku školy.
 
 Rating2: Hodnotí, zda se stejný předmět neopakuje vícekrát v den (vyjma cvičení).
@@ -125,7 +136,7 @@ Rating10: Hodnotí, zda den obsahuje učitele s negativním nebo pozitivním vli
 
 
 
-Třída: OurSchoolSchedule
+## Třída: OurSchoolSchedule
 Tato třída slouží k vytváření školních rozvrhů na základě dat uložených v JSON souboru.
 
 Metoda: CreateOurSchedule
@@ -135,13 +146,22 @@ Tato metoda vytváří školní rozvrh na základě dat uložených v JSON soubo
 List<Day> - Seznam dnů, přičemž každý den obsahuje rozvrh lekcí.
 
 Postup:
-Získání cesty k JSON souboru obsahujícímu data o lekcích.
-Deserializace obsahu JSON souboru na seznam objektů typu Lesson.
-Rozdělení seznamu lekcí do denních rozvrhů.
-Vytvoření seznamu objektů typu Day na základě denních rozvrhů.
-Přiřazení denního rozvrhu k jednotlivým objektům typu Day.
-Návrat seznamu dnů s odpovídajícími rozvrhy.
+1. Získání cesty k JSON souboru obsahujícímu data o lekcích.
+2. Deserializace obsahu JSON souboru na seznam objektů typu Lesson.
+3. Rozdělení seznamu lekcí do denních rozvrhů.
+4. Vytvoření seznamu objektů typu Day na základě denních rozvrhů.
+5. Přiřazení denního rozvrhu k jednotlivým objektům typu Day.
+6. Návrat seznamu dnů s odpovídajícími rozvrhy.
 
 
-Třídy: Subject a Lesson
+## Třídy: Subject a Lesson
 Tyto třídy jsou využívané k deserializaci json souborů nebo také pro generátor
+
+
+## Testováno spolužáky
+![TomasNovotny](https://github.com/MichalStilec/Schedule/assets/113086016/66ab8915-da33-4aa8-8535-74a40aaf65ac)
+![MilosTesar](https://github.com/MichalStilec/Schedule/assets/113086016/fad373cd-96eb-4ec7-9406-2703a2edf1f7)
+![VitVosol](https://github.com/MichalStilec/Schedule/assets/113086016/6ac33f2d-62a4-4d60-b401-1e123bcf8380)
+
+
+
